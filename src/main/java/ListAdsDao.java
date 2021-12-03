@@ -11,6 +11,8 @@ public class ListAdsDao implements Ads {
         return ads;
     }
 
+
+
     private List<Ad> generateAds() {
         List<Ad> ads = new ArrayList<>();
         ads.add(new Ad(

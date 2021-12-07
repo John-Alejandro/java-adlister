@@ -1,5 +1,6 @@
 package com.codeup.adlister.dao;
 
+import com.codeup.adlister.Config;
 import com.codeup.adlister.models.Ad;
 import com.mysql.cj.jdbc.Driver;
 
@@ -52,7 +53,9 @@ public class MySQLAdsDao implements Ads {
     }
 
     private String createInsertQuery(Ad ad) {
-        return "INSERT INTO ads(user_id, title, description) VALUES "
+        return "INSERT INTO ads(user_id, title, description) VALUES (?, ?, ?)"
+
+
             + "(" + ad.getUserId() + ", "
             + "'" + ad.getTitle() +"', "
             + "'" + ad.getDescription() + "')";
